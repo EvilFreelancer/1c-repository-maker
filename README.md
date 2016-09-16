@@ -39,5 +39,9 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
 
 * bash
 * wget
-* dpkg-scanpackages
+* dpkg-scanpackages (from dpkg-dev)
 * createrepo
+
+Command for installing of all dependencies on Debian/Ubuntu:
+
+    apt-get install bash wget dpkg-dev createrepo
