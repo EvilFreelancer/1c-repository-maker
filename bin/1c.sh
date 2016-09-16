@@ -11,8 +11,8 @@ source functions.sh
 #
 # Stage 1 - Get all links and download
 #
-#get_links "$SOURCE" | \
-#while read link; do download "$link" "$REPO_DEB" "$REPO_RPM"; done
+get_links "$SOURCE" | \
+while read link; do download "$link" "$REPO_DEB" "$REPO_RPM"; done
 
 #
 # Stage 2 - Create the repositories
