@@ -26,6 +26,7 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
     	server_name 1c.example.com;
     	root /path/to/repo;
     	charset utf8;
+    	server_tokens off;
     
         location / {
             autoindex on;
