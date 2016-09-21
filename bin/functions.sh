@@ -49,9 +49,7 @@ function create_repo()
             cd "$3"
             ;;
         "rpm")
-            cd "$2"
-            createrepo --database .
-            cd "$3"
+            createrepo --database "$2"
             ;;
         *)
             echo "ERR: Wrong extension. Exit." && exit
