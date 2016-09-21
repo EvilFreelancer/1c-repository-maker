@@ -46,10 +46,12 @@ function create_repo()
         "deb")
             cd "$2"
             dpkg-scanpackages --multiversion . /dev/null | gzip -9c > Packages.gz
+            cd "$3"
             ;;
         "rpm")
             cd "$2"
-            createrepo --database "$2"
+            createrepo --database .
+            cd "$3"
             ;;
         *)
             echo "ERR: Wrong extension. Exit." && exit

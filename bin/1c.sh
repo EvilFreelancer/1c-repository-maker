@@ -17,8 +17,5 @@ while read link; do download "$link" "$REPO_DEB" "$REPO_RPM"; done
 #
 # Stage 2 - Create the repositories
 #
-cd "$my_path"
-create_repo deb "$REPO_DEB"
-
-cd "$my_path"
-create_repo rpm "$REPO_RPM"
+create_repo deb "$REPO_DEB" "$my_path"
+create_repo rpm "$REPO_RPM" "$my_path"
