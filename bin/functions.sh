@@ -43,8 +43,16 @@ function create_repo()
 
     # Choose the mode
     case "$1" in
-        "deb") dpkg-scanpackages --multiversion "$2" /dev/null | gzip -9c > "$2"/Packages.gz ;;
-        "rpm") createrepo --database "$2" ;;
-        *) echo "ERR: Wrong extension. Exit." && exit ;;
+        "deb")
+            cd "$2"
+            dpkg-scanpackages --multiversion . /dev/null | gzip -9c > Packages.gz
+            ;;
+        "rpm")
+            cd "$2"
+            createrepo --database "$2"
+            ;;
+        *)
+            echo "ERR: Wrong extension. Exit." && exit
+            ;;
     esac
 }
