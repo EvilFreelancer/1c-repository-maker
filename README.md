@@ -1,6 +1,6 @@
-# 1C Repository Maker
+# 1C Thin Client Repository Maker
 
-A collection of scripts to create a repository of deb or rpm packages 1C.
+A collection of scripts to create a repository of deb or rpm packages 1C thin client.
 
 ## How to get and use
 
@@ -45,3 +45,7 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
 Command for installing of all dependencies on Debian/Ubuntu:
 
     apt-get install bash wget dpkg-dev createrepo
+
+## Some links
+
+* [Download page of 1C thin client](https://1cfresh.com/articles/thin_install_linux)
