@@ -17,6 +17,8 @@ You can automate packages update via Cron, for example:
     # Update 1C packages
     0 0 * * * /opt/scripts/1c-repository-maker/bin/1c.sh
 
+__Warning: Absolute path is important!__
+
 This example mean: "Run script every day at 0 hours 0 minutes", more details you can find on [Wikipedia](https://en.wikipedia.org/wiki/Cron#Overview).
 
 ## Nginx config example
@@ -49,3 +51,4 @@ Command for installing of all dependencies on Debian/Ubuntu:
 ## Some links
 
 * [Download page of 1C thin client](https://1cfresh.com/articles/thin_install_linux)
+* [working repository with 1C packages](http://1c.drteam.rocks/)
