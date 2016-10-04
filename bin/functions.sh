@@ -46,6 +46,7 @@ function create_repo()
         "deb")
             cd "$2"
             dpkg-scanpackages --multiversion . /dev/null > Packages
+            rm Packages.gz
             gzip -9 Packages
             cd "$3"
             ;;
