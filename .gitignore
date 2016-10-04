@@ -2,3 +2,5 @@
 repo/deb/
 repo/rpm/
 repo/index.html
+repo/last.txt
+repo/prev.txt

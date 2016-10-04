@@ -4,5 +4,6 @@
 SOURCE="https://1cfresh.com/articles/thin_install_linux"
 
 # Download paths
-REPO_DEB="../repo/deb"
-REPO_RPM="../repo/rpm"
+REPO="../repo"
+REPO_DEB="$REPO/deb"
+REPO_RPM="$REPO/rpm"
