@@ -43,12 +43,13 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
 * wget
 * dpkg-scanpackages (from dpkg-dev)
 * createrepo
+* gzip
 
 Command for installing of all dependencies on Debian/Ubuntu:
 
-    apt-get install bash wget dpkg-dev createrepo
+    apt-get install bash wget dpkg-dev createrepo gzip
 
 ## Some links
 
 * [Download page of 1C thin client](https://1cfresh.com/articles/thin_install_linux)
-* [working repository with 1C packages](http://1c.drteam.rocks/)
+* [Working repository with 1C packages](http://1c.drteam.rocks/)
