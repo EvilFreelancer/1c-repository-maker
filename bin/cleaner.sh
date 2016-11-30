@@ -11,7 +11,7 @@ source functions.sh
 # Incoming argv count test
 if [ $# -lt 2 ]
 then
- echo "./script <mode> <count>"
+ echo "./script <mode> <count> <update_y/n>"
  exit
 fi
 

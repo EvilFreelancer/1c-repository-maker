@@ -14,12 +14,12 @@ After this the program starts to download files from the 1C site.
 
 You can automate packages update via Cron, for example:
 
-    # Update 1C packages
-    0 0 * * * /opt/scripts/1c-repository-maker/bin/1c.sh
+    # At first need to remove old packages (first arg - mode, second - count of saved packages, i recommend minimum 8)
+    0 0 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh deb 8
+    0 0 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh rpm 8
 
-    # Remove old packages
-    0 1 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh deb 8
-    0 1 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh rpm 8
+    # Update 1C packages
+    0 1 * * * /opt/scripts/1c-repository-maker/bin/1c.sh
 
 __Warning: Absolute path is important!__
 
