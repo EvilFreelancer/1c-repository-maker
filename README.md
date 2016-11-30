@@ -17,6 +17,10 @@ You can automate packages update via Cron, for example:
     # Update 1C packages
     0 0 * * * /opt/scripts/1c-repository-maker/bin/1c.sh
 
+    # Remove old packages
+    0 1 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh deb 8
+    0 1 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh rpm 8
+
 __Warning: Absolute path is important!__
 
 This example mean: "Run script every day at 0 hours 0 minutes", more details you can find on [Wikipedia](https://en.wikipedia.org/wiki/Cron#Overview).
@@ -24,11 +28,11 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
 ## Nginx config example
 
     server {
-    	listen 80;
-    	server_name 1c.example.com;
-    	root /path/to/repo;
-    	charset utf8;
-    	server_tokens off;
+        listen 80;
+        server_name 1c.example.com;
+        root /path/to/repo;
+        charset utf8;
+        server_tokens off;
     
         location / {
             autoindex on;
