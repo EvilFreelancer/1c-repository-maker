@@ -4,7 +4,7 @@ A collection of scripts to create a repository of deb or rpm packages 1C thin cl
 
 ## How to get and use
 
-    git clone git@github.com:PavelRykov/1c-repository-maker.git
+    git clone git@github.com:EvilFreelancer/1c-repository-maker.git
     cd 1c-repository-maker
     ./bin/1c.sh
 
