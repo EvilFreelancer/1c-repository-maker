@@ -6,7 +6,7 @@ A collection of scripts to create a repository of deb or rpm packages 1C thin cl
 
     git clone git@github.com:EvilFreelancer/1c-repository-maker.git
     cd 1c-repository-maker
-    ./bin/1c.sh
+    ./scripts/1c.sh
 
 After this the program starts to download files from the 1C site.
 
@@ -14,23 +14,21 @@ After this the program starts to download files from the 1C site.
 
 You can automate packages update via Cron, for example:
 
-    # At first need to remove old packages (first arg - mode, second - count of saved packages, i recommend minimum 8)
-    0 0 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh deb 8
-    0 0 * * * /opt/scripts/1c-repository-maker/bin/cleaner.sh rpm 8
-
     # Update 1C packages
-    0 1 * * * /opt/scripts/1c-repository-maker/bin/1c.sh
+    0 1 * * * /opt/scripts/1c-repository-maker/scripts/1c.sh
 
 __Warning: Absolute path is important!__
 
 This example mean: "Run script every day at 0 hours 0 minutes", more details you can find on [Wikipedia](https://en.wikipedia.org/wiki/Cron#Overview).
 
-## Nginx config example
+## Web-server configuration examples
+
+### NGINX
 
     server {
         listen 80;
         server_name 1c.example.com;
-        root /path/to/repo;
+        root /path/to/repo/public;
         charset utf8;
         server_tokens off;
     
@@ -40,6 +38,16 @@ This example mean: "Run script every day at 0 hours 0 minutes", more details you
             autoindex_localtime on;
         }
     }
+
+### Apache
+
+    Alias / /path/to/repo/public/
+    <Directory /path/to/repo/public>
+            Options +Indexes
+            AllowOverride None
+            order allow,deny
+            allow from all
+    </Directory>
 
 ## Depends on
 

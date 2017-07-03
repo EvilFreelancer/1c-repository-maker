@@ -1,6 +1,5 @@
-.idea
-repo/deb/
-repo/rpm/
-repo/index.html
-repo/last.txt
-repo/prev.txt
+/.idea/
+/public/debian/
+/public/redhat/
+/public/index.html
+/public/index.php

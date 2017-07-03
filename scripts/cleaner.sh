@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Daemon fix
 my_path="$(dirname $0)"
@@ -6,7 +6,6 @@ cd "$my_path"
 
 # Include configs and functions
 source config.sh
-source functions.sh
 
 # Incoming argv count test
 if [ $# -lt 2 ]
@@ -24,11 +23,11 @@ keep=$2     # Exclude latest {count} files
 #
 case $mode in
     "deb")
-        path=$REPO_DEB
+        path="$REPO_DEB"
         filemask="*.deb"
         ;;
     "rpm")
-        path=$REPO_RPM
+        path="$REPO_RPM"
         filemask="*.rpm"
         ;;
     *)
@@ -48,6 +47,6 @@ while read filename
                 x=$(($x+1))
                 continue
         fi
-        echo "INF: Remove $filename"
-        rm $filename
+        echo "INF: Removing $filename"
+        rm "$filename"
 done
