@@ -19,13 +19,13 @@ source config.sh
 #
 # Stage 2 - Run cleaner
 #
-if [ "x$AUTOCLEAN" == "1" ]
+if [ "x$AUTOCLEAN" == "x1" ]
     then
         echo "INF: Clean old .deb packages"
-        ./cleaner.sh deb 12 n
+        ./cleaner.sh deb 12
 
         echo "INF: Clean old .rpm packages"
-        ./cleaner.sh rpm 12 n
+        ./cleaner.sh rpm 12
 fi
 
 #
