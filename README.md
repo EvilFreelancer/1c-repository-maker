@@ -1,3 +1,5 @@
+![1C Logo](http://drteam.rocks/images/1c-repo-maker/1c_x200.jpg)
+
 # 1C Thin Client Repository Maker
 
 A collection of scripts to create a repository of deb or rpm packages 1C thin client.
