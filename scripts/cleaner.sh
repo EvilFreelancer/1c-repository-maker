@@ -24,11 +24,13 @@ keep=$2     # Exclude latest {count} files
 case $mode in
     "deb")
         path="$REPO_DEB"
-        filemask="*.deb"
+        filemask1="*client_*.deb"
+        filemask2="*client-nls_*.deb"
         ;;
     "rpm")
         path="$REPO_RPM"
-        filemask="*.rpm"
+        filemask1="*client-8*.deb"
+        filemask2="*client-nls-*.deb"
         ;;
     *)
         echo "ERR: Wrong mode, only 'deb' or 'rpm' is available"
@@ -39,14 +41,18 @@ esac
 #
 # Stage 2 - Remove the old files
 #
-ls -t $path/$filemask | \
+ls -t $path/$filemask1 | \
 while read filename
     do
-        if [ $x -le $keep ]
-            then
-                x=$(($x+1))
-                continue
-        fi
+        if [ $x -le $keep ]; then x=$(($x+1)); continue; fi
+        echo "INF: Removing $filename"
+        rm "$filename"
+done
+
+ls -t $path/$filemask2 | \
+while read filename
+    do
+        if [ $x -le $keep ]; then x=$(($x+1)); continue; fi
         echo "INF: Removing $filename"
         rm "$filename"
 done

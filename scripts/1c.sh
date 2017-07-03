@@ -22,10 +22,10 @@ source config.sh
 if [ "x$AUTOCLEAN" == "x1" ]
     then
         echo "INF: Clean old .deb packages"
-        ./cleaner.sh deb 12
+        ./cleaner.sh deb 6
 
         echo "INF: Clean old .rpm packages"
-        ./cleaner.sh rpm 12
+        ./cleaner.sh rpm 6
 fi
 
 #
