@@ -29,8 +29,8 @@ case $mode in
         ;;
     "rpm")
         path="$REPO_RPM"
-        filemask1="*client-8*.deb"
-        filemask2="*client-nls-*.deb"
+        filemask1="*client-8*.rpm"
+        filemask2="*client-nls-*.rpm"
         ;;
     *)
         echo "ERR: Wrong mode, only 'deb' or 'rpm' is available"
